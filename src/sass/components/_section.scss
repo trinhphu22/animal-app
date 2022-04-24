@@ -1,0 +1,29 @@
+.section {
+    margin-bottom: 30px;
+
+    & > * ~ * {
+        margin-top: 30px;
+    }
+
+    &__title {
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        text-align: start;
+
+        &__home {
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        &__page {
+            font-size: 3.5rem;
+            font-weight: 800;
+        }
+
+        &__second {
+            margin-top: 0;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+    }
+}

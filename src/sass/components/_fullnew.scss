@@ -1,0 +1,177 @@
+.fullnew {
+  margin: 5rem 10rem;
+
+  @include tablet {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  &>*~* {
+    margin-top: 10px;
+  }
+
+  &__top {
+    min-height: 5rem;
+    width: 100%;
+    background-color: #dff0d8;
+    border-radius: 10px;
+
+    @include flex(center, space-between);
+
+    &__text {
+      font-size: 1.1rem;
+
+      &__tenvietnam {
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-weight: 800;
+        color: $main-color;
+        padding-left: 1rem;
+
+        @include tablet {
+          font-size: 2.5rem;
+        }
+
+        @include mobile {
+          font-size: 2rem;
+        }
+      }
+
+      &__nganh {
+        color: $main-color;
+        padding-left: 1rem;
+        font-style: italic;
+
+        @include tablet {
+          padding: 0;
+        }
+
+        @include mobile {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    &__author {
+      font-size: 1.2rem;
+      padding-right: 2rem;
+      color: #700808;
+
+      @include flex(center, flex-start);
+
+      flex-direction: row;
+
+      &__image {
+        height: 3rem;
+        width: 3rem;
+        margin-right: 1rem;
+
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 50%;
+        }
+      }
+
+      @include mobile {
+        padding: 2rem 0;
+      }
+
+      &__user {
+        margin-left: 0.2rem;
+
+        span {
+          text-indent: 5rem;
+
+          &:hover {
+            cursor: pointer;
+            color: $main-color;
+          }
+        }
+      }
+    }
+
+  }
+
+  &__content {
+
+    @include flex(flex-start, flex-start);
+
+    &__left {
+      margin: 1rem;
+
+      img {
+        height: 40vh;
+      }
+    }
+
+    &__right {
+      margin: 1rem;
+      font-size: 1.2rem;
+
+      .title {
+        color: #700808;
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+
+      .text {
+        padding: 1rem 0 1rem 1rem;
+        // padding-left: 1rem;
+        line-height: 2.5rem;
+
+        .subtitle {
+          color: $main-color;
+        }
+      }
+    }
+
+  }
+
+  &__card {
+    min-height: 5rem;
+    width: 100%;
+    background-color: #bce8f1;
+    color: #31708f;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.2rem;
+
+    .subtitle {
+      font-weight: 800;
+    }
+  }
+
+  &__title {
+    margin-top: 2rem;
+    color: #700808;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  &__related {
+
+    @include flex(center, flex-start);
+
+    overflow-x: auto;
+
+    &__card {
+      padding: 1rem;
+      cursor: pointer;
+
+      @include flex(center, center);
+
+      flex-direction: column;
+
+      img {
+        height: 20vh;
+      }
+
+      &__name {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $main-color;
+      }
+    }
+  }
+
+}

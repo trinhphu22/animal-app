@@ -1,0 +1,257 @@
+.profile {
+  height: auto;
+  width: 100%;
+  @include flex(center, flex-start);
+
+  flex-direction: column;
+
+  &__card {
+    margin: 1rem 0;
+    padding: 1rem;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: $box-shadow;
+    width: 90%;
+
+    @include flex(flex-start, flex-start);
+
+    flex-direction: row;
+
+    &__image {
+      height: 15rem;
+      margin: 2rem;
+      width: fit-content;
+
+      img {
+        height: 100%;
+        border-radius: 15px;
+      }
+    }
+
+    &__info {
+      width: 80%;
+      margin: 2rem 0;
+
+      &__user {
+        width: 100%;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #ccc;
+        font-size: 3rem;
+        font-weight: 600;
+      }
+
+      &__email,
+      &__type {
+        width: 100%;
+        margin-top: 1.5rem;
+        font-size: 1.2rem;
+      }
+
+      &__type {
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #ccc;
+      }
+
+      &__abstract {
+        margin-top: 1.5rem;
+
+        p {
+          font-size: 1.2rem;
+        }
+      }
+
+      &__settings {
+        margin-top: 1.5rem;
+
+        button {
+          @include flex(center, center);
+
+          padding: 1rem;
+          font-size: 1.4rem;
+          border-radius: 10px;
+          border: none;
+          background-color: $main-color;
+          color: #fff;
+          box-shadow: $box-shadow;
+
+          i {
+            font-size: 2rem;
+            margin-right: 0.5rem;
+          }
+
+          &:hover {
+            background-color: #33960ce0;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    padding: 1rem;
+    width: 90%;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+
+    @include flex(flex-start, flex-start);
+  }
+
+  &__article {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    height: auto;
+    width: 90%;
+
+    @include flex(flex-start, flex-start);
+
+    &__image {
+      height: 12rem;
+      padding-right: 2rem;
+
+      img {
+        @include flex(center, center);
+
+        height: 100%;
+        width: 20rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__textbox {
+      @include flex(flex-start, flex-start);
+
+      flex-direction: column;
+
+      &__title {
+        font-size: 2.2rem;
+        font-weight: 600;
+        font-family: "M PLUS Rounded 1c", sans-serif;
+
+        &:hover {
+          color: $main-color;
+          cursor: pointer;
+        }
+      }
+
+      &__description {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        color: #747474;
+      }
+    }
+  }
+}
+
+.profile-edit {
+  @include flex(center, flex-start);
+
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+
+  &__card {
+    @include flex(flex-start, center);
+
+    flex-direction: column;
+    margin: 1rem 0;
+    padding: 2rem 15%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: $box-shadow;
+    width: 90%;
+
+    & > * ~ * {
+      margin-top: 2rem;
+    }
+
+    &__title {
+      @include flex(center, center);
+
+      width: 100%;
+      margin-bottom: 1rem;
+      font-size: 2.2rem;
+      font-weight: 600;
+
+      i {
+        margin-right: 0.5rem;
+        font-size: 2.5rem;
+        color: $main-color;
+      }
+    }
+
+    &__input {
+      width: 100%;
+
+      label {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+      input {
+        width: 100%;
+        height: 3rem;
+        padding: 0 1rem;
+        font-size: 1.2rem;
+      }
+
+      &__image {
+        height: 15rem;
+
+        img {
+          height: 100%;
+        }
+      }
+
+      &__button {
+        @include flex(flex-start, center);
+
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+
+        button {
+          height: 2.5rem;
+          width: 20%;
+          margin-top: 1rem;
+          background-color: $main-color;
+          color: #fff;
+          font-size: 1.2rem;
+          border-radius: 15px;
+          border: none;
+
+          &:hover {
+            background-color: #33960ce0;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &__button {
+      @include flex(center, space-evenly);
+
+      width: 100%;
+
+      button {
+        padding: 1rem 10rem;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        background-color: $main-color;
+        color: #fff;
+        border-radius: 15px;
+        border: none;
+
+        &:hover {
+          background-color: #33960ce0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

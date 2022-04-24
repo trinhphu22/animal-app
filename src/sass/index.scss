@@ -1,0 +1,14 @@
+@import "./-variables.scss";
+@import "./mixins.scss";
+@import "./base";
+
+@import "./components/header";
+@import "./components/footer";
+@import "./components/section";
+@import "./components/new-card";
+@import "./components/fullnew";
+@import "./components/login";
+@import "./components/author";
+@import "./components/_admin-dashboard";
+@import "./components/editadmin";
+@import "./components/profile";

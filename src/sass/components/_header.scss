@@ -1,0 +1,314 @@
+.header {
+  background-color: $main-bg;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  height: $header-height;
+  transition: height 0.3s ease;
+
+  .container {
+    height: 100%;
+  }
+
+  @include tablet {
+    height: $header-tablet-height;
+    box-shadow: $box-shadow;
+  }
+
+  @include mobile {
+    height: $header-mobile-height;
+    box-shadow: $box-shadow;
+  }
+
+  &.shrink {
+    height: $header-shrink-height;
+    box-shadow: $box-shadow;
+    z-index: 100;
+  }
+
+  &__logo {
+    @include flex(center, center);
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    pointer-events: none;
+
+    img {
+      height: 80px;
+    }
+  }
+
+  &__menu {
+    @include flex(center, space-between);
+    height: 80%;
+    font-size: 1.3rem;
+    margin-top: 0.4rem;
+
+    &__item ~ &__item {
+      margin-left: 39px;
+
+      @include tablet {
+        margin-left: 25px;
+      }
+
+      @include mobile {
+        margin-left: 15px;
+      }
+    }
+
+    &__item:active,
+    &__item:focus {
+      font-weight: 600;
+      color: $main-color;
+    }
+
+    &__item:hover {
+      color: $main-color;
+      cursor: pointer;
+    }
+
+    &__left,
+    &__right {
+      @include flex(center, center);
+    }
+
+    &__right {
+      font-size: 2.2rem;
+
+      &__item {
+        @include flex(center, center);
+
+        @include tablet {
+          margin-left: 25px;
+        }
+
+        &:hover {
+          color: #000;
+        }
+
+        .smalltext {
+          font-size: 1rem;
+        }
+
+        .box-user {
+          @include flex(center, flex-start);
+
+          flex-direction: row;
+
+          &__info {
+            @include flex(center, flex-start);
+
+            flex-direction: row;
+            padding: 0.1rem 0.3rem;
+
+            &__image {
+              height: 2.5rem;
+              width: 2.5rem;
+              img {
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+              }
+            }
+
+            &__displayname {
+              // color: red;
+              font-size: 1.3rem;
+              margin-right: 10px;
+            }
+
+            &:hover {
+              background-color: #f2f2f2;
+              border-radius: 20px;
+              cursor: pointer;
+            }
+          }
+
+          &__down {
+            @include flex(center, center);
+
+            position: relative;
+            font-size: 1.2rem;
+            margin-left: 4px;
+
+            // .on-click-down
+            &:hover {
+              color: $main-color;
+              background-color: #f2f2f2;
+              height: 1.2rem;
+              width: 1.2rem;
+              border-radius: 50%;
+              cursor: pointer;
+            }
+          }
+
+          .on-click-down {
+            color: $main-color;
+            background-color: #f2f2f2;
+            height: 1.2rem;
+            width: 1.2rem;
+            border-radius: 50%;
+            cursor: pointer;
+          }
+        }
+
+        .subnav-user {
+          position: absolute;
+          height: auto;
+          width: 23rem;
+          top: 4rem;
+          right: 2rem;
+          background-color: #ffffff;
+          margin-top: 0.2rem;
+          padding: 0.5rem;
+          box-shadow: $box-shadow;
+          border-radius: 20px;
+          font-size: 1.5rem;
+
+          // @include flex(flex-start, center);
+
+          // flex-direction: column;
+
+          &__image {
+            border: 2px solid rgba(204, 204, 204, 0.5);
+            background-color: rgba(240, 240, 240, 0.1);
+            border-radius: 20px;
+            padding: 1rem 0.5rem;
+
+            &__box {
+              @include flex(center, initial);
+
+              flex-direction: row;
+              width: 100%;
+              height: 4rem;
+              line-height: 2rem;
+
+              img {
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                margin-right: 1rem;
+              }
+
+              .info {
+                &__user {
+                  @include flex(center, space-between);
+
+                  flex-direction: row;
+                  width: 100%;
+                  font-size: 1.6rem;
+
+                  span {
+                    font-size: 1rem;
+                  }
+                }
+
+                &__email {
+                  font-size: 1rem;
+                  color: #5e5e5e;
+                }
+              }
+            }
+          }
+
+          &__tag {
+            @include flex(center, space-between);
+            flex-direction: row;
+            padding: 1rem 0.5rem;
+            line-height: 2rem;
+            margin-top: 0.5rem;
+
+            &:hover {
+              background-color: rgba(87, 87, 87, 0.1);
+              border-radius: 15px;
+              cursor: pointer;
+            }
+
+            &__left {
+              position: relative;
+              // padding-top: 0.2rem;
+              padding-right: 1rem;
+              font-size: 2.2rem;
+              border-radius: 50%;
+            }
+
+            &__alert {
+              position: absolute;
+              margin-left: 1rem;
+              top: 12.7rem;
+              background-color: #b30000;
+              color: #fff;
+              width: 15px;
+              height: 15px;
+              font-size: 0.8rem;
+              font-weight: 600;
+              border-radius: 50%;
+              
+              @include flex(center, center);
+            }
+
+            &__center {
+              width: 90%;
+              font-size: 1.2rem;
+            }
+
+            &__right {
+              font-size: 2.2rem;
+            }
+          }
+        }
+      }
+
+      @include mobile {
+        font-size: 1.2rem;
+      }
+    }
+
+    &__left {
+      &__close {
+        display: none;
+      }
+
+      @include tablet {
+        flex-direction: column;
+        background-color: $main_bg;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        justify-content: flex-start;
+        padding-top: 30px;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+
+        &.active {
+          transform: translateX(0);
+        }
+
+        &__item ~ &__item {
+          margin-left: unset;
+          margin-top: 20px;
+        }
+
+        &__close {
+          display: block;
+          position: absolute;
+          left: 20px;
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    &__mobile-toggle {
+      display: none;
+
+      @include tablet {
+        display: block;
+        font-size: 2.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,161 @@
+.account {
+  max-width: 100%;
+  max-height: 100vh;
+  margin-top: calc(#{$header-height} * 1.2);
+
+  @include flex(center, center);
+
+  @include mobile {
+    margin-top: calc(#{$header-mobile-height} * 1);
+  }
+
+  &__box {
+    border-top: 10px solid $main-color;
+    position: relative;
+    // background-color: snow;
+    height: 80vh;
+    width: 30%;
+    box-shadow: $box-shadow;
+    border-radius: 10px;
+
+    @include flex(center, center);
+
+    @include tablet {
+      height: 60vh;
+      width: 40%;
+    }
+
+    @include mobile {
+      width: 100%;
+      height: 80vh;
+
+    }
+
+    &__logo {
+      margin-top: -0.5rem;
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      pointer-events: none;
+
+      @include flex(flex-start, center);
+
+      img {
+        height: 100px;
+      }
+    }
+
+    &__header {
+      margin-top: 8rem;
+      position: absolute;
+      inset: 0;
+      flex-direction: row;
+      height: 30%;
+
+      @include flex(flex-start, center);
+
+      &__tabs {
+        padding: 1rem 6rem;
+        border-bottom: 1px solid #ccc;
+
+        @include flex(flex-start, center);
+
+        @include tablet {
+          padding: 1rem 3rem;
+        }
+
+        a {
+          color: $main-color;
+          padding: 1rem;
+          text-transform: uppercase;
+          font-size: 1.2rem;
+
+        }
+        
+        .onActive {
+          border: 1px solid #ccc;
+          border-bottom: 1px solid #fff;
+          color: #000;
+        }
+      }
+    }
+
+    &__body {
+      margin-top: 7rem;
+      position: absolute;
+      inset: 0;
+      margin-right: 5%;
+      margin-left: 5%;
+      flex-direction: column;
+      height: 150%;
+      
+      @include flex(center, flex-start);
+      
+      input {
+        width: 100%;
+        height: 3rem;
+        margin-top: 2rem;
+        padding-left: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc; 
+
+        @include flex(baseline, center);
+
+        &:focus {
+          outline: 1px solid #ccc;
+          box-shadow: 2px 2px 5px #000;
+          border: 1px solid #ccc;
+        }
+      }
+
+      &__message {
+        color: rgb(185, 11, 11);
+        padding-top: 1rem;
+      }
+    }
+
+    &__footer {
+      margin-top: 25rem;
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      margin-right: 5%;
+      margin-left: 5%;
+      flex-direction: column;
+
+      @include flex(center, flex-start);
+
+      button {
+        width: 100%;
+        height: 3rem;
+        margin: 2rem;
+        color: #f2f2f2;
+        text-transform: uppercase;
+        border-radius: 5px;
+        border: none;
+        font-size: 1.2rem;
+        background: #0066ff; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #2ebf91,
+          #0066ff
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #49d312, #39a40e, #29750a);
+
+        &:hover {
+          background: linear-gradient(to left, #49d312, #39a40e, #29750a);
+          cursor: pointer;
+        }
+      }
+
+      a {
+        font-size: 1.1rem;
+        color: $txt-second-color;
+
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}

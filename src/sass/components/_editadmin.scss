@@ -1,0 +1,426 @@
+.edit {
+  @include flex(flex-start, space-between);
+
+  flex-direction: row;
+  margin-top: 4rem;
+  padding: 0 5%;
+
+  &__image {
+    width: 25%;
+
+    img {
+      height: 15rem;
+      width: 15rem;
+      border-radius: 50%;
+    }
+
+    &__button {
+      width: 100%;
+      @include flex(center, center);
+
+      flex-direction: column;
+
+      button {
+        margin-top: 1rem;
+        height: 2.5rem;
+        width: 80%;
+        background-color: $main-color;
+        border: none;
+        color: #fff;
+        font-size: 1.2rem;
+
+        &:hover {
+          background-color: #33960ce0;
+          box-shadow: $box-shadow;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__profile {
+    width: 70%;
+
+    @include flex(flex-start, flex-start);
+
+    flex-direction: column;
+
+    label {
+      width: 20%;
+      font-size: 1.5rem;
+    }
+
+    input {
+      height: 3rem;
+      width: 80%;
+      padding-left: 1rem;
+      font-size: 1.5rem;
+    }
+
+    textarea {
+      height: 8rem;
+      width: 80%;
+      padding-top: 0.5rem;
+      padding-left: 1rem;
+      font-size: 1.5rem;
+    }
+
+    select {
+      height: 3rem;
+      width: 40%;
+      padding-left: 1rem;
+      font-size: 1.5rem;
+    }
+
+    &__user,
+    &__email,
+    &__type {
+      width: 100%;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      padding-right: 2rem;
+
+      @include flex(center, flex-start);
+    }
+
+    &__button {
+      @include flex(center, space-evenly);
+
+      flex-direction: row;
+      width: 100%;
+      margin-top: 4rem;
+
+      button {
+        height: 3rem;
+        width: 40%;
+        background-color: $main-color;
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
+
+        &:hover {
+          background-color: #33960ce0;
+          box-shadow: $box-shadow;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.edit-category {
+  @include flex(center, center);
+
+  height: 40vh;
+  width: 100%;
+  margin-bottom: 4rem;
+
+  &__card {
+    @include flex(center, flex-start);
+
+    flex-direction: column;
+    height: 100%;
+    width: 60%;
+    border-top: 10px solid $main-color;
+    border-radius: 15px;
+    box-shadow: $box-shadow;
+
+    & > * ~ * {
+      margin-top: 4rem;
+    }
+
+    &__title {
+      margin-top: 2rem;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    &__text {
+      @include flex(center, space-between);
+
+      width: 80%;
+
+      label {
+        width: 20%;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      input {
+        height: 3rem;
+        width: 75%;
+        padding-left: 1rem;
+        font-size: 1.5rem;
+      }
+    }
+
+    &__button {
+      @include flex(center, space-evenly);
+
+      flex-direction: row;
+      width: 80%;
+
+      button {
+        height: 2.5rem;
+        width: 30%;
+        background-color: $main-color;
+        color: #fff;
+        font-size: 1.5rem;
+        border-radius: 10px;
+        border: none;
+
+        &:hover {
+          background-color: #33960ce0;
+          box-shadow: $box-shadow;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.message {
+  @include flex(center, center);
+
+  height: 40vh;
+  width: 100%;
+  margin: 4rem 0;
+
+  &__card {
+    @include flex(center, flex-start);
+
+    flex-direction: column;
+    height: auto;
+    width: 60%;
+    border-top: 10px solid $main-color;
+    border-radius: 15px;
+    box-shadow: $box-shadow;
+
+    & > * ~ * {
+      margin-top: 4rem;
+    }
+
+    &__title {
+      margin-top: 2rem;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    &__text {
+      @include flex(center, space-between);
+      
+      width: 80%;
+
+      label {
+        width: 20%;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      input,
+      textarea {
+        height: 3rem;
+        width: 75%;
+        padding-left: 1rem;
+        font-size: 1.5rem;
+      }
+
+      textarea {
+        height: 5rem;
+        padding-top: 0.5rem;
+      }
+    }
+
+    &__button {
+      @include flex(center, space-evenly);
+
+      flex-direction: row;
+      width: 80%;
+      margin-bottom: 2rem;
+
+      button {
+        height: 2.5rem;
+        width: 30%;
+        background-color: $main-color;
+        color: #fff;
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: #33960ce0;
+          box-shadow: $box-shadow;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.edit-news {
+  margin: 5rem 10rem;
+
+  @include tablet {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  &>*~* {
+    margin-top: 10px;
+  }
+
+  &__top{
+    min-height: 5rem;
+    width: 100%;
+    background-color: #dff0d8;
+    border-radius: 10px;
+
+    @include flex(center, space-between);
+
+    &__text {
+      font-size: 1.1rem;
+
+      &__tenvietnam {
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-weight: 800;
+        color: $main-color;
+        padding-left: 1rem;
+
+        @include tablet {
+          font-size: 2.5rem;
+        }
+
+        @include mobile {
+          font-size: 2rem;
+        }
+      }
+
+      &__nganh {
+        color: $main-color;
+        padding-left: 1rem;
+        font-style: italic;
+
+        @include tablet {
+          padding: 0;
+        }
+
+        @include mobile {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    &__author {
+      font-size: 1.2rem;
+      padding-right: 2rem;
+      color: #700808;
+  
+      @include flex(center, flex-start);
+  
+      flex-direction: row;
+  
+      &__image {
+        height: 3rem;
+        width: 3rem;
+        margin-right: 1rem;
+  
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 50%;
+        }
+      }
+  
+      @include mobile {
+        padding: 2rem 0;
+      }
+  
+      &__user {
+        margin-left: 0.2rem;
+  
+        span {
+          text-indent: 5rem;
+  
+          &:hover {
+            cursor: pointer;
+            color: $main-color;
+          }
+        }
+      }
+    }
+
+  }
+
+  &__content {
+
+    &__left {
+      margin: 1rem;
+  
+      img {
+        width: 100%;
+      }
+    }
+
+    &__right {
+      margin: 1rem; 
+      font-size: 1.2rem;
+
+      .title {
+        color: #700808;
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+
+      .text {
+        padding: 1rem 0 1rem 1rem;
+        // padding-left: 1rem;
+        line-height: 2.5rem;
+
+        .subtitle {
+          color: $main-color;
+        }
+      }
+    }
+
+  }
+
+  &__card {
+    min-height: 5rem;
+    width: 100%;
+    background-color: #bce8f1;
+    color: #31708f;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.2rem;
+
+    .subtitle {
+      font-weight: 800;
+    }
+  }
+
+  &__button {
+    @include flex(center, center);
+
+    flex-direction: column;
+    width: 100%;
+    height: 5rem;
+    margin-top: 5rem;
+
+    button {
+      background-color: $main-color;
+      border: none;
+      color: #fff;
+      // text-transform: uppercase;
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+      width: 90%;
+
+      &:hover {
+        background-color: #33960ce0;
+        box-shadow: $box-shadow;
+        cursor: pointer;
+      }
+    }
+  }
+}
