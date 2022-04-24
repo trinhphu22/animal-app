@@ -292,14 +292,14 @@ const PostNew = (props) => {
         </div>
         <div className="postnew__text__description">
           <textarea
-            onChange={(event) => setMota(event.target.value)}
+            onChange={(event) => setDacDiem(event.target.value)}
             value={dacDiem}
             placeholder="Đặc điểm hình thái"
           />
         </div>
         <div className="postnew__text__content">
           <textarea
-            onChange={(event) => setDacDiem(event.target.value)}
+            onChange={(event) => setMota(event.target.value)}
             value={moTa}
             placeholder="Đặc điểm sinh thái"
           />
