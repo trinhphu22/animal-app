@@ -3,6 +3,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Home from "../pages/Home";
+import Family from "../pages/Family";
 import ReadNew from "../pages/ReadNew";
 import Account from "../pages/Account";
 import Author from "../pages/Author";
@@ -19,6 +20,7 @@ const Routers = () => {
     <div>
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/family" exact component={Family} />
         <Route path="/article/" component={ReadNew} />
         <Route path="/profile/" exact component={Profile} />
         <Route path="/message/" exact component={Message} />

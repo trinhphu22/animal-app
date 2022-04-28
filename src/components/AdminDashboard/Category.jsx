@@ -17,7 +17,7 @@ const Category = () => {
     window.scroll(0, 0);
   }, []);
 
-  //Lọc dữ liệu trong bảng Account và show lên
+  //Lọc dữ liệu trong bảng Taxonomy và show lên
 
   useEffect(
     () =>

@@ -8,6 +8,8 @@ import { storage } from "../config/firebase-config";
 const PostNew = (props) => {
   const id = props.id;
 
+  // element post
+
   const [scienceName, setSienceName] = useState("");
   const [vietnameseName, setVietnameseName] = useState("");
   const [localName, setLocalName] = useState("");
@@ -34,6 +36,8 @@ const PostNew = (props) => {
   const [taxonomy, setTaxonomy] = useState([]);
   const [user, setUser] = useState([]);
 
+  const [addTaxonomy, setAddTaxomy] = useState("");
+
   const fileInputRef = useRef();
 
   const clearInputs = () => {
@@ -57,6 +61,7 @@ const PostNew = (props) => {
     setImagePreview("");
     setDate(new Date());
   };
+
 
   //Hiển thị image
 
@@ -161,6 +166,17 @@ const PostNew = (props) => {
     []
   );
 
+  // Thêm dữ liệu vào db "Taxonomy"
+
+  const addFamily = async () => {
+    const collectionRef = collection(db, "Taxonomy");
+    const payload = {
+      family: addTaxonomy,
+    };
+    await addDoc(collectionRef, payload);
+    alert("Đã thêm");
+  };
+
   // tìm dữ liệu user bằng id
 
   useEffect(() => {
@@ -198,6 +214,20 @@ const PostNew = (props) => {
             <option value={item.family}>{item.family}</option>
           ))}
         </select>
+        <div className="postnew__text__add">
+          <input
+            className="input"
+            type="text"
+            onChange={(event) => setAddTaxomy(event.target.value)}
+            placeholder="Thêm ngành mới"
+          />
+          <input
+            className="input-add"
+            type="button"
+            value="Thêm"
+            onClick={addFamily}
+          />
+        </div>
         <div className="postnew__text__title">
           <input
             type="text"

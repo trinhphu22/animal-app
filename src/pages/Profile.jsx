@@ -127,11 +127,11 @@ const Profile = (props) => {
           <>
             <div className="profile__title">
               <span>
-                Tin tức gần nhất từ{" "}
+                Tất cả tin tức từ{" "}
                 <Link to={`/profile/?id=${id}`}>{article[0].author}</Link>
               </span>
             </div>
-            {article.slice(0, 5).map((item) => (
+            {article.map((item) => (
               <div className="profile__article">
                 <Link
                   to={`/article/?id=${item.id}`}
